@@ -1,0 +1,95 @@
+
+%
+(Straigh Roughing Profile)
+(NOTE: Be sure the mode is G07. Since the machine does not have limit switches, if you power off the machine,)
+(the Part Zero position will be gone. Therefore, it was necessary to establish a reference point)
+(When first arting, use the handwheel and move the tip of tool to X = 0 with Z just touching the part.)
+(Using AXIS, click the Home for both the X and Z axes.  This is Part Zero.)
+(This gcode will move the tool to Part Zero at the end of the gcode file. A new part will change the Part Zero for Z.)
+(T/F, with a new part in the lathe, manually run the first few lines of code to restablish the Part Zero.)
+(Use the handwheel with on each axis and adjust as needed. Then click on “All Zero.” )
+(All position numbers will change to 0.0000 and green, and you will be set to go again.)
+(Lathe gcodes:)
+G07  ( lathe radius mode )
+G18   ( Plane: ZX )
+G20   (  inches for length units )
+G40   (  cancel the cutter compensation. )
+G49   ( cancel tool length offset )
+G90   ( distance mode: ABSOLUTE )
+G94   ( reset feed rate: inches / minute - Fx )
+ 
+ 
+G91 G28 X.25 Z.250
+G90
+G28 X0.0 Z0.0 (Part Zero - homing sequence)
+G01 Z0.20 F5
+G01 Z0.00  (Z should be touching face of part again)
+G00 X0.75 (Manually reset tool to the starting postion if nec. Turn the steppers back to ON SWITCH)
+ 
+G01 X 0.4925 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.4775 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.4625 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.4475 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.4325 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.4175 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.4025 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.3875 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.3725 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.3575 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.3425 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.3275 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.3125 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.2975 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.2825 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X 0.2545 F 4
+G01 Z -1 F 4
+G01 X 0.502 F 4
+G00 Z 0.000
+G01 X0.00 F3
+M30  (Rewind to start. Use M02 to restart in current end state.)
+%
